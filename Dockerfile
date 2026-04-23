@@ -1,4 +1,4 @@
-FROM python:3.12-slim
+FROM python:3.12
 
 # Install SSH server and common dev tools
 RUN apt-get update && apt-get install -y --no-install-recommends \
@@ -7,6 +7,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     git \
     curl \
     vim \
+    bart \
     && mkdir -p /run/sshd \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
